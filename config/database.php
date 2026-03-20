@@ -38,6 +38,7 @@
         echo "Local success connection !!!";
     }
 
+//Supabase connection
 
     //SUPABASE CONNECTION
     $supa_conn = pg_connect($supa_data_connection);
