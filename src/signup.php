@@ -6,8 +6,11 @@ include('../config/database.php');
     $e_mail = $_POST ['email'];
     $m_phone = $_POST ['mphone'];
     $p_sswd = $_POST ['passwd'];
+    $enc_pass = md5($p_sswd);
+
 //Query to insert into SQL
-    $sql = "Insert into users (firstname, lastname, email, password, mobile_phone) values ( '$f_name', '$l_name', '$e_mail', '$p_sswd', '$m_phone')";
+    $sql = "Insert into users (firstname, lastname, email, mobile_phone, password) 
+    values ( '$f_name', '$l_name', '$e_mail', '$m_phone', '$enc_pass')";
     
     //EXECUTE QUERY
     pg_query($sql);
