@@ -38,7 +38,7 @@ $res_local = pg_query($local_conn, $sql);
 
 if ($res_local) {
     
-    $res_supa = pg_query($supa_data_connection, $sql);
+    $res_supa = pg_query($supa_conn, $sql);
 
     if ($res_supa) {
         echo "Guardado en ambos lados";
@@ -48,6 +48,8 @@ if ($res_local) {
 } else {
     echo "Error... no se pudo guardar ni en local";
 }
+//contraseña
+$enc_pass = password_hash($p_sswd, PASSWORD_BCRYPT);
 
 
 
