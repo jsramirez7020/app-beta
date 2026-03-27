@@ -25,4 +25,12 @@ if (pg_num_rows($res_email) > 0) {
 
 $res_local = pg_query($local_conn, $sql); 
 }
+//telefono 
+$check_phone = "SELECT mobile_phone FROM users_model WHERE mobile_phone = '$m_phone'";
+$res_phone = pg_query($local_conn, $check_phone);
+
+if (pg_num_rows($res_phone) > 0) {
+    echo "Error: El número de celular '$m_phone' ya está registrado en nuestro sistema."; 
+    exit();
+}
 ?>
