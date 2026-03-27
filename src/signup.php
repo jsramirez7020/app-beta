@@ -13,5 +13,16 @@ include('../config/database.php');
     values ( '$f_name', '$l_name', '$e_mail', '$m_phone', '$enc_pass')";
     
     //EXECUTE QUERY
-    pg_query($sql);
+    //pg_query($sql);
+    //email 
+$check_email = "SELECT email FROM users WHERE email = '$e_mail'";
+$res_email = pg_query($local_conn, $check_email);
+
+if (pg_num_rows($res_email) > 0) {
+    echo "Error: El correo electrónico '$e_mail' ya está registrado. Por favor, use uno diferente.\n";
+    exit();
+
+
+$res_local = pg_query($local_conn, $sql); 
+}
 ?>
