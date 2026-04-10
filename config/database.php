@@ -31,7 +31,7 @@
     //LOCAL CONNECTION
     $local_conn = pg_connect($local_data_connection);
 
-    if(!$local_conn){
+    /*if(!$local_conn){
         echo "Error: Unable to connect to local database";
         exit();
     }else{
@@ -46,6 +46,10 @@
         exit();
     }else{
         echo "<br>Supabase success connection !!!";
+<<<<<<< Updated upstream
     }
 */
+=======
+    } */
+>>>>>>> Stashed changes
 ?>
